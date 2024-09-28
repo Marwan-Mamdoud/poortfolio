@@ -5,10 +5,11 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import Link from "next/link";
+import MagicButton from "./MagicButton";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20">
+    <div id="projects" className="py-20">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
@@ -16,7 +17,7 @@ const RecentProjects = () => {
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[32.5rem] h-[25rem] flex flex-col gap-16 items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
             <Link href={item.link}>
@@ -73,6 +74,20 @@ const RecentProjects = () => {
                 </div>
               </PinContainer>
             </Link>
+            <a
+              href="https://github.com/Marwan-Mamdoud?tab=repositories"
+              className="flex items-center justify-center gap-5"
+            >
+              <MagicButton
+                title="Check Repository"
+                icon={
+                  <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
+                    <img src="/git.svg" alt="icons" width={20} height={20} />
+                  </div>
+                }
+                position="left"
+              />
+            </a>
           </div>
         ))}
       </div>

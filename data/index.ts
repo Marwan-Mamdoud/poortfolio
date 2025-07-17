@@ -91,9 +91,9 @@ export const projects = [
     id: 3,
     title: "The bigest E-commerce",
     des: "Big E-commerce builded by Next.js, Node.js, Expess.js, MongoDB.",
-    img: "/ecommerce.png",
+    img: "/image.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://e-commerce-pink-alpha-55.vercel.app/",
+    link: "https://center-kitchen-client.vercel.app/",
   },
   {
     id: 4,

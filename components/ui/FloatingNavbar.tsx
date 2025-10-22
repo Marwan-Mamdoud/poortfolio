@@ -22,6 +22,14 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Marwan-Mamdouh-CV.pdf";
+    link.download = "Marwan-Mamdouh-CV.pdf"; // اسم الملف عند التحميل
+    link.click();
+    link.remove();
+  };
+
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
 
@@ -73,6 +81,11 @@ export const FloatingNav = ({
       >
         {navItems.map((navItem: any, idx: number) => (
           <Link
+            onClick={() => {
+              if (navItem.name === "MyCV") {
+                handleDownload();
+              }
+            }}
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(

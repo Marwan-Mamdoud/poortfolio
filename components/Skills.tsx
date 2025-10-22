@@ -1,5 +1,22 @@
 import React from "react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io5";
+import { BiLogoTypescript } from "react-icons/bi";
+import { FaReact } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { SiNestjs } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { DiRedis } from "react-icons/di";
+import { IoLogoNpm } from "react-icons/io5";
+import { TbBrandGraphql } from "react-icons/tb";
+import { FaGitAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Skills = () => {
   return (
@@ -16,271 +33,176 @@ export const projects = [
     title: "HTMl",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-html.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <FaHtml5 className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-red-500",
   },
   {
     title: "CSS",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-css.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <FaCss3Alt className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-blue-500",
   },
   {
     title: "TailwindCSS",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-tailwind-css.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <SiTailwindcss className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-sky-500",
   },
   {
     title: "JavaScript",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-javascript.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <IoLogoJavascript className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-yellow-500",
   },
   {
     title: "TypeScript",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-typescript.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <BiLogoTypescript className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-blue-500",
   },
   {
     title: "React.js",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-react.svg"
-          alt="icons"
-          width={70}
-          height={70}
+        <FaReact
+          className=""
+          size={70}
+          style={{ transform: "rotate(180deg)" }}
         />
       </div>
     ),
     link: "",
+    className: "hover:text-sky-500",
   },
   {
     title: "Next.js",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/nextjs-icon-svgrepo-com.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <SiNextdotjs className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-black",
   },
   {
     title: "Node.js",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-node-js.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <FaNode className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-green-500",
   },
   {
     title: "Express.js",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-express-js.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <SiExpress className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-yellow-500",
+  },
+  {
+    title: "Nest.js",
+    description: (
+      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
+        <SiNestjs className="" size={70} />
+      </div>
+    ),
+    link: "",
+    className: "hover:text-red-500",
   },
   {
     title: "MongoDB",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-mongodb.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <SiMongodb className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-green-500",
   },
   {
-    title: "Next.js",
+    title: "Postgresql",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/nextjs-icon-svgrepo-com.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <BiLogoPostgresql className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-blue-500",
+  },
+  {
+    title: "Redis",
+    description: (
+      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
+        <DiRedis className="" size={70} />
+      </div>
+    ),
+    link: "",
+    className: "hover:text-red-500",
   },
   {
     title: "npm",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-npm.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <IoLogoNpm className="" size={70} />
       </div>
     ),
     link: "",
-  },
-  {
-    title: "JWT",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-lock.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
-      </div>
-    ),
-    link: "",
+    className: "hover:text-black",
   },
   {
     title: "Git",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-git.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <FaGitAlt className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-gray-300",
   },
   {
     title: "GitHub",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-git (1).svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <FaGithub className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-gray-500",
   },
-  {
-    title: "Context API",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/context-data-details-svgrepo-com.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
-      </div>
-    ),
-    link: "",
-  },
-  {
-    title: "jQuery",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/icons8-jquery.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
-      </div>
-    ),
-    link: "",
-  },
+
   {
     title: "GraphQl",
     description: (
       <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <img
-          className="text-white"
-          src="/graphql-icon.svg"
-          alt="icons"
-          width={70}
-          height={70}
-        />
+        <TbBrandGraphql className="" size={70} />
       </div>
     ),
     link: "",
+    className: "hover:text-pink-500",
   },
 ];
 

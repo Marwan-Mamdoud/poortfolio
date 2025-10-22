@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+            Full Stack Javascript Developer
           </p>
 
           {/**
@@ -52,21 +52,27 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
+            words=" Hi! I'm Marwan Mamdouh, A Full Stack Javascript Developer - Backend Focused!"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Marwan Mamdouh, a Full Stack Javascript Developer.
-          </p>
-
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
+          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl"></p>
+          <div className="flex flex-wrap gap-3 items-center justify-center w-fit mx-auto">
+            <a href="#Expreience">
+              <MagicButton
+                title="Show my Expreience"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+            <a href="#projects">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

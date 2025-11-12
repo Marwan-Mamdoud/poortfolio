@@ -196,7 +196,7 @@ export const socialMedia = [
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/wha.svg",
     href: "tel:+201274847904",
   },
   {

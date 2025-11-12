@@ -192,12 +192,12 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    href: "https://github.com/Marwan-Mamdoud?tab=repositories",
+    href: "https://github.com/Marwan-Mamdoud",
   },
   {
     id: 2,
     img: "/twit.svg",
-    href: "01274847904",
+    href: "tel:+201274847904",
   },
   {
     id: 3,

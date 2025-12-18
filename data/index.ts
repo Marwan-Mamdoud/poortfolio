@@ -183,7 +183,7 @@ export const workExperience = [
     thumbnail: "/Nobodiez.svg",
     location: "Dubai, United Arab Emirates",
     type: "Full Time, Remote",
-    duration: "Aug, 2024 – present",
+    duration: "Aug, 2024 – Sep, 2024",
     company: "Nobodiez Digital Agency",
   },
   {

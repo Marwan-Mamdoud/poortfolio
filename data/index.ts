@@ -173,20 +173,6 @@ export const companies = [
 
 export const workExperience = [
   {
-    id: 1,
-    title: "Full Stack Javascript Developer",
-    desc: `-Built and maintained web applications using MongoDB, Express.js, React.js, Node.js, and Next.js.
- -Improved front-end load speed by 50% through code splitting, lazy loading.
--Refactored legacy backend services, increasing code maintainability by 25%.
--Reduced MongoDB query times by 65% via indexing and optimized schema design.`,
-    className: "md:col-span-2",
-    thumbnail: "/Nobodiez.svg",
-    location: "Dubai, United Arab Emirates",
-    type: "Full Time, Remote",
-    duration: "Aug, 2024 – Sep, 2024",
-    company: "Nobodiez Digital Agency",
-  },
-  {
     id: 2,
     title: "Software Developer",
     desc: `- Developed and customized enterprise systems for Dunkin’ Donuts (Gong Cha specific), Garnell, and Pable & Abdo.
@@ -199,9 +185,23 @@ export const workExperience = [
     thumbnail: "https://media.licdn.com/dms/image/v2/D4D0BAQGjcIrALuU5Ow/company-logo_200_200/company-logo_200_200/0/1693820342565?e=1767830400&v=beta&t=BdqpkLib7rQjq1w3GUtDYfw1I2I5eKdcieMpbSul3pk",
     location: "Qesm El Maadi, Cairo, Egypt",
     type: "Full Time, On Site",
-    duration: "Aug, 2024 – Present",
+    duration: "Oct, 2025 – Present",
     company: "Anyware Software",
   },
+  {
+    id: 1,
+    title: "Full Stack Javascript Developer",
+    desc: `-Built and maintained web applications using MongoDB, Express.js, React.js, Node.js, and Next.js.
+ -Improved front-end load speed by 50% through code splitting, lazy loading.
+-Refactored legacy backend services, increasing code maintainability by 25%.
+-Reduced MongoDB query times by 65% via indexing and optimized schema design.`,
+    className: "md:col-span-2",
+    thumbnail: "/Nobodiez.svg",
+    location: "Dubai, United Arab Emirates",
+    type: "Full Time, Remote",
+    duration: "Aug, 2024 – Sep, 2025",
+    company: "Nobodiez Digital Agency",
+  }
 ];
 
 export const socialMedia = [

@@ -186,6 +186,22 @@ export const workExperience = [
     duration: "Aug, 2024 – present",
     company: "Nobodiez Digital Agency",
   },
+  {
+    id: 2,
+    title: "Software Developer",
+    desc: `- Developed and customized enterprise systems for Dunkin’ Donuts (Gong Cha specific), Garnell, and Pable & Abdo.
+- Worked on POS-integrated solutions with real-time order handling (Dine-In, Takeaway, Delivery).
+- Implemented business logic for order processing, receipt printing, and QR-based workflows.
+- Built and maintained backend services using C#, .NET, Java Spring, Node.js, and Express.js.
+- Designed and managed data persistence with SQL Server and MongoDB.
+- Delivered stable, production-ready solutions in high-traffic retail and restaurant environments.`,
+    className: "md:col-span-2",
+    thumbnail: "https://media.licdn.com/dms/image/v2/D4D0BAQGjcIrALuU5Ow/company-logo_200_200/company-logo_200_200/0/1693820342565?e=1767830400&v=beta&t=BdqpkLib7rQjq1w3GUtDYfw1I2I5eKdcieMpbSul3pk",
+    location: "Qesm El Maadi, Cairo, Egypt",
+    type: "Full Time, On Site",
+    duration: "Aug, 2024 – Present",
+    company: "Anyware Software",
+  },
 ];
 
 export const socialMedia = [

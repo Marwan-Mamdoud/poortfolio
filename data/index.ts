@@ -173,6 +173,19 @@ export const companies = [
 
 export const workExperience = [
   {
+    id: 3,
+    title: "Backend Developer",
+    desc: `- Developed and maintained scalable microservices-based backend systems at Trego Tech for Rabta and Tego App, supporting real-world production workloads.
+- Designed and implemented independent, loosely coupled services to handle core domains such as users, orders, payments, and notifications.
+-Built RESTful APIs and inter-service communication using Node.js, Express.js, and NestJS, following clean architecture and domain-driven principles.`,
+    className: "md:col-span-2",
+    thumbnail: "/trego_tech_logo.jpeg",
+    location: "Cairo, Egypt",
+    type: "Full Time, Hybrid",
+    duration: "jan, 2026 – Present",
+    company: "Trego Tech",
+  },
+  {
     id: 2,
     title: "Software Developer",
     desc: `- Developed and customized enterprise systems for Dunkin’ Donuts (Gong Cha specific), Garnell, and Pable & Abdo.
@@ -182,10 +195,10 @@ export const workExperience = [
 - Designed and managed data persistence with SQL Server and MongoDB.
 - Delivered stable, production-ready solutions in high-traffic retail and restaurant environments.`,
     className: "md:col-span-2",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4D0BAQGjcIrALuU5Ow/company-logo_200_200/company-logo_200_200/0/1693820342565?e=1767830400&v=beta&t=BdqpkLib7rQjq1w3GUtDYfw1I2I5eKdcieMpbSul3pk",
+    thumbnail: "/anyware_logo.jpeg",
     location: "Qesm El Maadi, Cairo, Egypt",
     type: "Full Time, On Site",
-    duration: "Oct, 2025 – Present",
+    duration: "Oct, 2025 – jan, 2026",
     company: "Anyware Software",
   },
   {
@@ -201,7 +214,7 @@ export const workExperience = [
     type: "Full Time, Remote",
     duration: "Aug, 2024 – Sep, 2025",
     company: "Nobodiez Digital Agency",
-  }
+  },
 ];
 
 export const socialMedia = [

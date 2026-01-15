@@ -36,7 +36,7 @@ const Experience = () => {
                     <img
                       src={card.thumbnail}
                       alt={card.thumbnail}
-                      className="w-[200px] max-[450px]:w-[120px] object-cover"
+                      className="w-[200px] h-[100px] max-[450px]:w-[120px] object-contain"
                     />
                     <div className="flex flex-col gap-1">
                       <p className="text-start text-2xl max-[450px]:text-xl whitespace-pre-line font-semibold">

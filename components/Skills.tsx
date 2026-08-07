@@ -1,209 +1,92 @@
-import React from "react";
-import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io5";
-import { BiLogoTypescript } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { FaNode } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { SiNestjs } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { DiRedis } from "react-icons/di";
-import { IoLogoNpm } from "react-icons/io5";
-import { TbBrandGraphql } from "react-icons/tb";
-import { FaGitAlt } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+"use client";
 
-const Skills = () => {
+import { skills } from "@/data";
+import { useEffect, useRef, useState } from "react";
+
+function useInView(ref: React.RefObject<HTMLDivElement | null>) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [ref]);
+  return visible;
+}
+
+export default function Skills() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const visible = useInView(sectionRef);
+
   return (
-    <div id="skills" className="max-w-5xl text-center mx-auto px-8">
-      <h1 className="font-extrabold  font-mono text-6xl text-white">
-        My <span className="text-indigo-300">Skills</span>
-      </h1>
-      <HoverEffect items={projects} />
-    </div>
+    <section
+      ref={sectionRef}
+      id="skills"
+      className="py-section-gap px-5 md:px-16 max-w-[1280px] mx-auto relative z-10"
+    >
+      {/* Section Header */}
+      <div
+        className={`mb-12 border-b-2 border-primary-container pb-4 flex items-center gap-4 bg-surface-container/50 p-4 rounded backdrop-blur-sm transition-all duration-700 ${
+          visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+        }`}
+      >
+        <span className="text-4xl text-primary">&#9881;</span>
+        <h2 className="font-headline text-headline-md text-on-surface font-extrabold uppercase tracking-wide">
+          Technical Competencies
+        </h2>
+      </div>
+
+      {/* Skills Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.map((cluster, idx) => (
+          <div
+            key={cluster.cluster}
+            className={`card-terminal bg-surface/90 overflow-hidden shadow-[0_0_15px_rgba(0,69,38,0.2)] group backdrop-blur-md rounded transition-all duration-700 ${
+              visible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: `${idx * 120}ms` }}
+          >
+            {/* Cluster Header */}
+            <div className="bg-surface-container-high px-4 py-2 border-b border-outline-variant flex items-center justify-between">
+              <span className="font-code text-[10px] text-primary uppercase font-bold tracking-widest">
+                CLUSTER: {cluster.cluster}
+              </span>
+              <div className="flex gap-1">
+                <div className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-4">
+              <h3 className="font-code text-sm text-on-surface mb-4 uppercase flex items-center gap-2 font-bold border-b border-outline-variant pb-2">
+                <span className="text-primary text-lg">&#9881;</span>{" "}
+                {cluster.label}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {cluster.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 bg-primary-container/20 border border-primary/20 rounded text-xs font-code font-bold text-primary tracking-wider hover:border-primary/60 hover:bg-primary-container/30 transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
-};
-export const projects = [
-  {
-    title: "HTMl",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <FaHtml5 className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-red-500",
-  },
-  {
-    title: "CSS",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <FaCss3Alt className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-blue-500",
-  },
-  {
-    title: "TailwindCSS",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <SiTailwindcss className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-sky-500",
-  },
-  {
-    title: "JavaScript",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <IoLogoJavascript className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-yellow-500",
-  },
-  {
-    title: "TypeScript",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <BiLogoTypescript className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-blue-500",
-  },
-  {
-    title: "React.js",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <FaReact
-          className=""
-          size={70}
-          style={{ transform: "rotate(180deg)" }}
-        />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-sky-500",
-  },
-  {
-    title: "Next.js",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <SiNextdotjs className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-black",
-  },
-  {
-    title: "Node.js",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <FaNode className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-green-500",
-  },
-  {
-    title: "Express.js",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <SiExpress className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-yellow-500",
-  },
-  {
-    title: "Nest.js",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <SiNestjs className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-red-500",
-  },
-  {
-    title: "MongoDB",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <SiMongodb className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-green-500",
-  },
-  {
-    title: "Postgresql",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <BiLogoPostgresql className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-blue-500",
-  },
-  {
-    title: "Redis",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <DiRedis className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-red-500",
-  },
-  {
-    title: "npm",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <IoLogoNpm className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-black",
-  },
-  {
-    title: "Git",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <FaGitAlt className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-gray-300",
-  },
-  {
-    title: "GitHub",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <FaGithub className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-gray-500",
-  },
-
-  {
-    title: "GraphQl",
-    description: (
-      <div className="w-15 h-15 mx-auto cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75  rounded-lg border-none">
-        <TbBrandGraphql className="" size={70} />
-      </div>
-    ),
-    link: "",
-    className: "hover:text-pink-500",
-  },
-];
-
-export default Skills;
+}

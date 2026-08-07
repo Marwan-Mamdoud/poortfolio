@@ -1,236 +1,247 @@
+import { link } from "fs";
+
 export const navItems = [
-  { name: "MyCV", link: "#cv" },
+  { name: "Home", link: "#home" },
   { name: "Skills", link: "#skills" },
+  { name: "Experience", link: "#experience" },
   { name: "Projects", link: "#projects" },
-  { name: "Experience", link: "#Expreience" },
   { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
+export const skills = [
+  {
+    cluster: "BACKEND_CORE",
+    label: "Server-Side",
+    icon: "dns",
+    items: ["NODE.JS", "EXPRESS.JS", "NESTJS", "C#", ".NET CORE"],
+  },
+  {
+    cluster: "FRONTEND_V1",
+    label: "Client-Side",
+    icon: "web",
+    items: [
+      "NEXT.JS",
+      "REACT.JS",
+      "TYPESCRIPT",
+      "TAILWIND CSS",
+      "JAVASCRIPT ES6+",
+    ],
+  },
+  {
+    cluster: "DATA_STORE",
+    label: "Persistence",
+    icon: "database",
+    items: ["POSTGRESQL", "MONGODB", "REDIS", "SQL SERVER"],
+  },
+  {
+    cluster: "CLOUD_OPS",
+    label: "Infrastructure",
+    icon: "cloud",
+    items: ["DOCKER", "AWS", "LINUX", "NGINX", "CI/CD"],
+  },
+  {
+    cluster: "TOOLS_MGT",
+    label: "Tooling",
+    icon: "build",
+    items: ["GIT", "GITHUB", "POSTMAN", "JIRA"],
+  },
+  {
+    cluster: "CONCEPTS",
+    label: "Engineering Concepts",
+    icon: "psychology",
+    items: [
+      "SYSTEM DESIGN",
+      "DATA STRUCTURES & ALGORITHMS",
+      "REST API DESIGN",
+      "GRAPHQL",
+      "MICROSERVICES",
+      "OOP / SOLID",
+      "DESIGN PATTERNS",
+    ],
+  },
+];
+
+export const workExperience = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
-    img: "/b1.svg",
-    spareImg: "",
+    title: "Software Engineer",
+    company: "Trego Tech",
+    logo: "/trego_tech_logo.jpeg",
+    duration: "Jan 2026 - Present",
+    location: "Cairo, Egypt",
+    type: "Full Time, Hybrid",
+    directives: [
+      "Developed and maintained scalable microservices-based backend systems supporting real-world production workloads.",
+      "Designed and implemented independent, loosely coupled services to handle core domains such as users, orders, payments, and notifications.",
+      "Built RESTful APIs and inter-service communication using Node.js, Express.js, and NestJS, following clean architecture and domain-driven principles.",
+    ],
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
+    title: "Software Developer",
+    company: "Anyware Software",
+    logo: "/anyware_logo.jpeg",
+    duration: "Oct 2025 - Jan 2026",
+    location: "Cairo, Egypt",
+    type: "Full Time, On Site",
+    directives: [
+      "Developed and customized enterprise systems for major clients including Dunkin' Donuts and Garnell.",
+      "Worked on POS-integrated solutions with real-time order handling for Dine-In, Takeaway, and Delivery.",
+      "Implemented business logic for order processing, receipt printing, and QR-based workflows.",
+      "Built and maintained backend services using C#, .NET, Java Spring, Node.js, and Express.js.",
+    ],
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 4,
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
-  },
-
-  {
-    id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
-    className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
-  },
-  {
-    id: 6,
-    title: "Do you want to start a project together?",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
+    title: "Full Stack Javascript Developer",
+    company: "Nobodiez Digital Agency",
+    logo: "/Nobodiez.svg",
+    duration: "Aug 2024 - Sep 2025",
+    location: "Dubai, UAE",
+    type: "Full Time, Remote",
+    directives: [
+      "Built and maintained web applications using MongoDB, Express.js, React.js, Node.js, and Next.js.",
+      "Improved front-end load speed by 50% through code splitting and lazy loading.",
+      "Refactored legacy backend services, increasing code maintainability by 25%.",
+      "Reduced MongoDB query times by 65% via indexing and optimized schema design.",
+    ],
   },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "Duoling clone",
-    des: "Duolingo clone builded by Next.js, Node.js, Expess.js, MongoDB.",
-    img: "/lingo.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://lingo-silk-nine.vercel.app/",
+    company: "Trego Tech",
+    title: "Rabta",
+    subtitle: "Multi-Channel E-Commerce Management Platform",
+    terminal: "rabta@trego:~",
+    description:
+      "A multi-channel e-commerce platform that connects merchants with marketplaces such as Shopify, Amazon, Noon, WooCommerce, Jumia, Trendyol, and Zid. Manages products, orders, inventory, shops, pricing, and synchronization across multiple sales channels.",
+    tech: ["Node.js", "NestJS", "MongoDB", "REST APIs", "Microservices"],
+    link: "https://dashboard.e-rabta.com/",
   },
   {
     id: 2,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://iphone-ui-rose.vercel.app/",
+    company: "Nobodiez Digital Agency",
+    title: "Ajman Government",
+    subtitle: "News & Journalist Management Platform",
+    terminal: "ajman@nobodiez:~",
+    description:
+      "A real-time digital platform developed for the Ajman Government to support journalists and news management workflows. Enables monitoring, verification, and uploading of news with real-time synchronization across connected platforms.",
+    tech: ["Next.js", "Node.js", "Express.js", "MongoDB", "WebSockets"],
+    private: true,
   },
   {
     id: 3,
-    title: "The bigest E-commerce",
-    des: "Big E-commerce builded by Next.js, Node.js, Expess.js, MongoDB.",
-    img: "/image.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://center-kitchen-client.vercel.app/",
+    company: "Anyware Software",
+    title: "Gong Cha",
+    subtitle: "Beverage & Cafe Management Platform",
+    terminal: "gongcha@anyware:~",
+    description:
+      "A digital platform built for managing operations and customer-facing experiences for the Gong Cha beverage and cafe business. Supports digital workflows for products, orders, and integrated business operations.",
+    tech: ["Node.js", "Express.js", "C#", ".NET", "SQL Server"],
+    private: true,
   },
   {
     id: 4,
-    title: "Chat App",
-    des: "A REAL Chatapp builded by Next.js, Node.js, Expess.js, MongoDB..",
-    img: "/chat.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://chatapp-frontend-olive.vercel.app/",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-];
-
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    company: "Anyware Software",
+    title: "Pablo & Abdo",
+    subtitle: "Cafe & Restaurant Management System",
+    terminal: "pablo@anyware:~",
+    description:
+      "A digital platform developed for a cafe and restaurant business. Supports digital operations with functionality for managing products, services, and customer-facing workflows.",
+    tech: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
+    private: true,
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    company: "Anyware Software",
+    title: "Garnell",
+    subtitle: "Cafe & Restaurant Digital Platform",
+    terminal: "garnell@anyware:~",
+    description:
+      "A digital platform designed for a cafe and restaurant business, supporting digital presence and operational workflows. Provides structured management of restaurant content and services.",
+    tech: ["Node.js", "Express.js", "MongoDB", "Java Spring"],
+    private: true,
+  },
+
+  {
+    id: 6,
+    company: "Personal",
+    title: "Duolingo Clone",
+    subtitle: "Full-Stack Language Platform",
+    terminal: "duolingo@local:~",
+    description:
+      "A full-featured Duolingo clone built with Next.js on the frontend and Node.js/Express.js on the backend, featuring MongoDB for data persistence, user authentication, progress tracking, and interactive lessons.",
+    tech: ["Next.js", "Node.js", "Express.js", "MongoDB", "TypeScript"],
+    link: "https://lingo-silk-nine.vercel.app/",
+    repo: "https://github.com/Marwan-Mamdoud",
+    private: false,
+  },
+  {
+    id: 7,
+    company: "Personal",
+    title: "Animated Apple iPhone 3D",
+    subtitle: "Interactive 3D Experience",
+    terminal: "iphone3d@local:~",
+    description:
+      "Recreated the Apple iPhone 15 Pro website with GSAP scroll-triggered animations and Three.js 3D model rendering, delivering an immersive product showcase experience.",
+    tech: ["Next.js", "GSAP", "Three.js", "Tailwind CSS", "TypeScript"],
+    link: "https://iphone-ui-rose.vercel.app/",
+    repo: "https://github.com/Marwan-Mamdoud",
+    private: false,
+  },
+  {
+    id: 8,
+    company: "Personal",
+    title: "E-Commerce Platform",
+    subtitle: "Enterprise Retail System",
+    terminal: "ecommerce@local:~",
+    description:
+      "A large-scale e-commerce platform built with Next.js frontend and Node.js/Express.js backend, featuring product management, cart system, payment integration, and MongoDB data persistence.",
+    tech: ["Next.js", "Node.js", "Express.js", "MongoDB", "Stripe"],
+    link: "https://center-kitchen-client.vercel.app/",
+    repo: "https://github.com/Marwan-Mamdoud",
+    private: false,
+  },
+  {
+    id: 9,
+    company: "Personal",
+    title: "Real-Time Chat App",
+    subtitle: "WebSocket Communication",
+    terminal: "chatapp@local:~",
+    description:
+      "A real-time chat application with WebSocket support, built using React.js and Node.js/Express.js backend with MongoDB for message persistence, featuring rooms, typing indicators, and online status.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io"],
+    link: "https://chatapp-frontend-olive.vercel.app/",
+    repo: "https://github.com/Marwan-Mamdoud",
+    private: false,
   },
 ];
 
-export const workExperience = [
-  {
-    id: 3,
-    title: "Backend Developer",
-    desc: `- Developed and maintained scalable microservices-based backend systems at Trego Tech for Rabta and Tego App, supporting real-world production workloads.
-- Designed and implemented independent, loosely coupled services to handle core domains such as users, orders, payments, and notifications.
--Built RESTful APIs and inter-service communication using Node.js, Express.js, and NestJS, following clean architecture and domain-driven principles.`,
-    className: "md:col-span-2",
-    thumbnail: "/trego_tech_logo.jpeg",
-    location: "Cairo, Egypt",
-    type: "Full Time, Hybrid",
-    duration: "jan, 2026 – Present",
-    company: "Trego Tech",
-  },
-  {
-    id: 2,
-    title: "Software Developer",
-    desc: `- Developed and customized enterprise systems for Dunkin’ Donuts (Gong Cha specific), Garnell, and Pable & Abdo.
-- Worked on POS-integrated solutions with real-time order handling (Dine-In, Takeaway, Delivery).
-- Implemented business logic for order processing, receipt printing, and QR-based workflows.
-- Built and maintained backend services using C#, .NET, Java Spring, Node.js, and Express.js.
-- Designed and managed data persistence with SQL Server and MongoDB.
-- Delivered stable, production-ready solutions in high-traffic retail and restaurant environments.`,
-    className: "md:col-span-2",
-    thumbnail: "/anyware_logo.jpeg",
-    location: "Qesm El Maadi, Cairo, Egypt",
-    type: "Full Time, On Site",
-    duration: "Oct, 2025 – jan, 2026",
-    company: "Anyware Software",
-  },
-  {
-    id: 1,
-    title: "Full Stack Javascript Developer",
-    desc: `-Built and maintained web applications using MongoDB, Express.js, React.js, Node.js, and Next.js.
- -Improved front-end load speed by 50% through code splitting, lazy loading.
--Refactored legacy backend services, increasing code maintainability by 25%.
--Reduced MongoDB query times by 65% via indexing and optimized schema design.`,
-    className: "md:col-span-2",
-    thumbnail: "/Nobodiez.svg",
-    location: "Dubai, United Arab Emirates",
-    type: "Full Time, Remote",
-    duration: "Aug, 2024 – Sep, 2025",
-    company: "Nobodiez Digital Agency",
-  },
-];
+export const contactInfo = {
+  email: "marwanmamdouh159@gmail.com",
+  phone: "+20 127 484 7904",
+  location: "Cairo, Egypt",
+};
 
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    name: "GitHub",
     href: "https://github.com/Marwan-Mamdoud",
+    icon: "code",
   },
   {
     id: 2,
-    img: "/wha.svg",
-    href: "tel:+201274847904",
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/marwan-mamdouh-full-stack/",
+    icon: "work",
   },
   {
     id: 3,
-    img: "/link.svg",
-    href: "https://www.linkedin.com/in/marwan-mamdouh-full-stack/",
+    name: "WhatsApp",
+    href: "tel:+201274847904",
+    icon: "chat",
   },
 ];

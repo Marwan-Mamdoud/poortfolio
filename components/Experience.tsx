@@ -1,80 +1,142 @@
-import React from "react";
+"use client";
 
 import { workExperience } from "@/data";
-import { Button } from "./ui/MovingBorders";
+import { useEffect, useRef, useState } from "react";
 
-const Experience = () => {
+function useInView(ref: React.RefObject<HTMLDivElement | null>) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [ref]);
+  return visible;
+}
+
+export default function Experience() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const visible = useInView(sectionRef);
+
   return (
-    <div id="Expreience" className="py-20 w-full">
-      <h1 className="heading">
-        My <span className="text-purple">work Experience</span>
-      </h1>
+    <section
+      ref={sectionRef}
+      id="experience"
+      className="py-section-gap px-5 md:px-16 bg-surface-container/70 border-y border-outline-variant relative backdrop-blur-md"
+    >
+      {/* Left accent line */}
+      <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-primary to-transparent opacity-50" />
 
-      <div className="w-full mt-12 grid grid-cols-1 gap-10">
-        {workExperience.map((card) => (
-          <Button
-            key={card.id}
-            //   random duration will be fun , I think , may be not
-            duration={Math.floor(Math.random() * 10000) + 10000}
-            borderRadius="1.75rem"
-            style={{
-              //   add these two
-              //   you can generate the color from here https://cssgradient.io/
-              background: "rgb(4,7,29)",
-              backgroundColor:
-                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-              // add this border radius to make it more rounded so that the moving border is more realistic
-              borderRadius: `calc(1.75rem* 0.96)`,
-            }}
-            // remove bg-white dark:bg-slate-900
-            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-          >
-            <div className="flex flex-col w-full lg:items-center p-8 lg:p-10 max-[600px]:px-4 gap-2">
-              <div className="grid w-full grid-cols-1 gap-5">
-                <div className="w-full grid grid-cols-4 max-[950px]:grid-cols-1 gap-3">
-                  <div className="flex flex-wrap items-center justify-start col-span-3 gap-6 w-full">
-                    <img
-                      src={card.thumbnail}
-                      alt={card.thumbnail}
-                      className="w-[200px] h-[100px] max-[450px]:w-[120px] object-contain"
-                    />
-                    <div className="flex flex-col gap-1">
-                      <p className="text-start text-2xl max-[450px]:text-xl whitespace-pre-line font-semibold">
-                        {card.title}
+      <div className="max-w-[1280px] mx-auto relative z-10">
+        {/* Section Header */}
+        <div
+          className={`mb-12 border-b-2 border-primary-container pb-4 flex items-center gap-4 transition-all duration-700 ${
+            visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+          }`}
+        >
+          <span className="text-4xl text-primary">&#128337;</span>
+          <h2 className="font-headline text-headline-md text-on-surface font-extrabold uppercase tracking-wide">
+            Record of Employment
+          </h2>
+        </div>
+
+        {/* Experience Cards */}
+        <div className="space-y-8">
+          {workExperience.map((job, idx) => (
+            <div
+              key={job.id}
+              className={`bg-surface/90 border border-outline-variant rounded p-8 shadow-lg hover:border-primary transition-all relative overflow-hidden group ${
+                visible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
+              }`}
+              style={{
+                transitionDelay: `${idx * 200}ms`,
+                transitionDuration: "0.8s",
+                transitionTimingFunction: "ease-out",
+              }}
+            >
+              {/* Corner accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-container/20 rounded-bl-full transition-transform group-hover:scale-110" />
+
+              <div className="flex flex-col md:flex-row gap-8 items-start relative z-10">
+                {/* Company Logo */}
+                <div className="flex-shrink-0 w-24 h-24 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center overflow-hidden shadow-inner">
+                  <img
+                    src={job.logo}
+                    alt={`${job.company} logo`}
+                    className="w-16 h-16 object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = "none";
+                      const parent = target.parentElement;
+                      if (parent) {
+                        const span = document.createElement("span");
+                        span.className =
+                          "font-headline font-bold text-primary opacity-50 text-3xl";
+                        span.textContent = job.company.charAt(0);
+                        parent.appendChild(span);
+                      }
+                    }}
+                  />
+                </div>
+
+                {/* Details */}
+                <div className="flex-grow">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                    <div>
+                      <h3 className="font-headline text-headline-sm text-on-surface font-extrabold">
+                        {job.title}
+                      </h3>
+                      <p className="font-bold text-primary uppercase text-sm mt-1 font-code tracking-wider">
+                        {job.company}
                       </p>
-                      <div className="w-full flex flex-wrap items-start justify-start gap-5 max-[450px]:gap-2 max-[400px]:mt-5">
-                        <p className="text-start whitespace-pre-line font-light">
-                          {card.company}.
-                        </p>
-                        <p className="text-start whitespace-pre-line font-light">
-                          - {card.duration}
-                        </p>
-                      </div>
                     </div>
+                    <span className="mt-2 md:mt-0 inline-block px-4 py-1 bg-surface-container-high border border-outline-variant rounded-full text-sm font-semibold text-on-surface-variant font-code">
+                      {job.duration}
+                    </span>
                   </div>
-                  <div className="lg:ms-5 w-full flex items-center max-[950px]:items-start max-[950px]:mt-5 max-[950px]:justify-start justify-end">
-                    <div className="w-fit flex items-start justify-start gap-2">
-                      <div className="flex items-start justify-start flex-col gap-1 font-light">
-                        <p className="text-start whitespace-pre-line font-semibold">
-                          {card.type}
-                        </p>
-                        <p className="text-start whitespace-pre-line font-semibold">
-                          {card.location}
-                        </p>
-                      </div>
-                    </div>
+
+                  {/* Key Directives */}
+                  <div className="bg-surface-container p-6 rounded border border-outline-variant">
+                    <h4 className="font-code font-bold text-xs text-on-surface-variant uppercase mb-4 border-b border-outline-variant pb-2">
+                      Key Directives
+                    </h4>
+                    <ul className="space-y-3 font-code text-on-surface-variant text-sm">
+                      {job.directives.map((directive, i) => (
+                        <li key={i} className="flex gap-3 items-start">
+                          <span className="text-primary mt-0.5 font-bold">
+                            {"[{"}]
+                          </span>
+                          <span className="leading-relaxed">{directive}</span>
+                          <span className="text-primary mt-0.5 font-bold">
+                            {"}]"}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Meta info */}
+                  <div className="flex gap-4 mt-4 font-code text-xs text-on-surface-variant">
+                    <span>&#128205; {job.location}</span>
+                    <span>&#128188; {job.type}</span>
                   </div>
                 </div>
-                <p className="text-start w-full whitespace-pre-line text-white-100 mt-3 font-base text-lg max-[450px]:text-base">
-                  {card.desc}
-                </p>
               </div>
             </div>
-          </Button>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Experience;
+}

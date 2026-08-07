@@ -1,55 +1,41 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
-import Link from "next/link";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
-      </div>
-
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:marwanmamdouh159@gmail.com">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
+    <footer className="w-full border-t-4 border-primary bg-surface-container-lowest relative z-10">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto px-5 md:px-16 py-8">
+        {/* Logo */}
+        <div className="font-display text-lg font-bold tracking-widest text-primary uppercase mb-4 md:mb-0 flex items-center gap-3">
+          <img
+            alt="Marwan Mamdouh Logo"
+            className="h-8 w-8 object-contain rounded"
+            src="/mr-.jpg"
           />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Marwan Mamdouh
-        </p>
-
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <Link key={info.id} href={info.href}>
-              <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
-                <img src={info.img} alt="icons" width={20} height={20} />
-              </div>
-            </Link>
-          ))}
+          OFFICE OF MARWAN MAMDOUH
         </div>
+
+        {/* Copyright */}
+        <div className="font-code font-bold text-xs uppercase tracking-wider text-on-surface-variant text-center mb-4 md:mb-0">
+          <span className="text-primary">&gt;</span> &copy; 2024 REGISTRY //
+          ALL RIGHTS RESERVED
+        </div>
+
+        {/* Social Links */}
+        <ul className="flex gap-6 font-code font-bold text-sm uppercase tracking-wider">
+          {socialMedia.map((social) => (
+            <li key={social.id}>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-on-surface hover:text-primary transition-colors flex items-center gap-1"
+              >
+                <span className="text-sm">&#60;/&#62;</span> {social.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

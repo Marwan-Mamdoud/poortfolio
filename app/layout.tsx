@@ -1,14 +1,30 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  weight: ["400", "500", "700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: "Marwan's Portfolio",
-  description: "Modern & Minimal Marwan Portfolio",
+  title: "Marwan Mamdouh | Backend Software Engineer",
+  description:
+    "Technical Precision Portfolio - Architecting robust, scalable enterprise solutions through technical precision and systems-level thinking.",
 };
 
 export default function RootLayout({
@@ -21,7 +37,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/mr-.jpg" sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-body bg-surface text-on-surface antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

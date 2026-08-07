@@ -1,32 +1,27 @@
-"use client";
-import { sendMail } from "@/lib/sendMail";
-import { navItems } from "@/data";
-
+import ShaderBackground from "@/components/ShaderBackground";
+import ScanlineOverlay from "@/components/ScanlineOverlay";
+import TopNav from "@/components/TopNav";
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Skills from "@/components/Skills";
-import { useEffect } from "react";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
+    <main className="relative bg-surface text-on-surface flex flex-col overflow-hidden">
+      <ShaderBackground />
+      <ScanlineOverlay />
+      <TopNav />
+      <div className="max-w-[1280px] w-full mx-auto grid-pattern">
         <Hero />
-        <Grid />
         <Skills />
         <Experience />
-        <RecentProjects />
-        <Clients />
-        <Approach />
-        <Footer />
+        <Projects />
+        <Contact />
       </div>
+      <Footer />
     </main>
   );
 };

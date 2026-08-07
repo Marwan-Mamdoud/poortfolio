@@ -44,7 +44,7 @@ export default function Experience() {
           }`}
         >
           <span className="text-4xl text-primary">&#128337;</span>
-          <h2 className="font-headline text-headline-md text-on-surface font-extrabold uppercase tracking-wide">
+          <h2 className="font-headline text-xl sm:text-headline-md text-on-surface font-extrabold uppercase tracking-wide">
             Record of Employment
           </h2>
         </div>
@@ -54,7 +54,7 @@ export default function Experience() {
           {workExperience.map((job, idx) => (
             <div
               key={job.id}
-              className={`bg-surface/90 border border-outline-variant rounded p-8 shadow-lg hover:border-primary transition-all relative overflow-hidden group ${
+              className={`bg-surface/90 border border-outline-variant rounded p-5 sm:p-8 shadow-lg hover:border-primary transition-all relative overflow-hidden group ${
                 visible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 -translate-x-16"
@@ -107,7 +107,7 @@ export default function Experience() {
                   </div>
 
                   {/* Key Directives */}
-                  <div className="bg-surface-container p-6 rounded border border-outline-variant">
+                  <div className="bg-surface-container p-4 sm:p-6 rounded border border-outline-variant">
                     <h4 className="font-code font-bold text-xs text-on-surface-variant uppercase mb-4 border-b border-outline-variant pb-2">
                       Key Directives
                     </h4>
@@ -127,7 +127,7 @@ export default function Experience() {
                   </div>
 
                   {/* Meta info */}
-                  <div className="flex gap-4 mt-4 font-code text-xs text-on-surface-variant">
+                  <div className="flex flex-wrap gap-2 sm:gap-4 mt-4 font-code text-xs text-on-surface-variant">
                     <span>&#128205; {job.location}</span>
                     <span>&#128188; {job.type}</span>
                   </div>

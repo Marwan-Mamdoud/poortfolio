@@ -40,7 +40,7 @@ export default function Skills() {
         }`}
       >
         <span className="text-4xl text-primary">&#9881;</span>
-        <h2 className="font-headline text-headline-md text-on-surface font-extrabold uppercase tracking-wide">
+        <h2 className="font-headline text-xl sm:text-headline-md text-on-surface font-extrabold uppercase tracking-wide">
           Technical Competencies
         </h2>
       </div>

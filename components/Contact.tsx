@@ -16,7 +16,7 @@ function useInView(ref: React.RefObject<HTMLDivElement | null>) {
           obs.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -39,7 +39,7 @@ export default function Contact() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -50,7 +50,12 @@ export default function Contact() {
     try {
       await sendMail(formData);
       setSubmitted(true);
-      setFormData({ name: "", email: "", inquiry: "Full-time Job", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        inquiry: "Full-time Job",
+        message: "",
+      });
       setTimeout(() => setSubmitted(false), 4000);
     } catch {
       // silent fail
@@ -69,13 +74,13 @@ export default function Contact() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,69,38,0.05)_50%,transparent_75%,transparent_100%)] bg-[length:10px_10px]" />
 
       <div
-        className={`max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 bg-surface border-2 border-outline-variant p-8 relative z-10 transition-all duration-700 ${
+        className={`max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 bg-surface border-2 border-outline-variant p-5 sm:p-8 relative z-10 transition-all duration-700 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
       >
         {/* Left Column - Contact Info */}
         <div className="lg:col-span-5 flex flex-col justify-start">
-          <h2 className="font-headline text-3xl text-on-surface font-extrabold uppercase mb-6 border-b-2 border-primary-container pb-4 flex items-center gap-3">
+          <h2 className="font-headline text-xl sm:text-3xl text-on-surface font-extrabold uppercase mb-6 border-b-2 border-primary-container pb-4 flex items-center gap-3">
             <span className="text-primary">&#9993;</span>
             Official Inquiry Submission
           </h2>
@@ -105,7 +110,7 @@ export default function Contact() {
                 </p>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="font-bold text-lg text-on-surface font-code hover:text-primary transition-colors"
+                  className="font-bold text-lg text-on-surface font-code hover:text-primary transition-colors max-[768px]:text-sm"
                 >
                   {contactInfo.email}
                 </a>
@@ -148,7 +153,7 @@ export default function Contact() {
         </div>
 
         {/* Right Column - Contact Form */}
-        <div className="lg:col-span-7 bg-surface-container-high border-2 border-outline-variant p-8 relative rounded">
+        <div className="lg:col-span-7 bg-surface-container-high border-2 border-outline-variant p-5 sm:p-8 relative rounded">
           <div className="absolute top-0 right-0 w-3 h-3 bg-primary -mt-1 -mr-1" />
           <div className="mb-8 border-b-2 border-outline-variant pb-4 flex justify-between items-end">
             <h3 className="font-headline text-headline-sm font-extrabold uppercase text-on-surface flex items-center gap-2">
@@ -204,7 +209,9 @@ export default function Contact() {
               >
                 <option value="Full-time Job">&gt; Full-time Job</option>
                 <option value="Part-time Job">&gt; Part-time Job</option>
-                <option value="Freelance Project">&gt; Freelance Project</option>
+                <option value="Freelance Project">
+                  &gt; Freelance Project
+                </option>
                 <option value="Other Inquiry">&gt; Other Inquiry</option>
               </select>
             </div>
@@ -231,13 +238,9 @@ export default function Contact() {
                 className="group w-full md:w-auto px-10 py-4 bg-primary text-on-primary font-bold uppercase tracking-wider border-2 border-primary hover:bg-transparent hover:text-primary transition-colors flex items-center justify-center gap-3 shadow-[4px_4px_0px_0px_rgba(151,212,170,0.5)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] rounded font-code disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {sending ? (
-                  <>
-                    Sending... &#8987;
-                  </>
+                  <>Sending... &#8987;</>
                 ) : submitted ? (
-                  <>
-                    Inquiry Submitted &#10003;
-                  </>
+                  <>Inquiry Submitted &#10003;</>
                 ) : (
                   <>
                     Submit Official Record{" "}

@@ -47,26 +47,22 @@ export default function Hero() {
         <div className="h-1 w-24 bg-primary mx-auto mb-6 animate-glow-pulse" />
 
         {/* Subtitle */}
-        <div className="flex flex-wrap justify-center gap-3 mb-6 animate-fade-in-up">
-          <span className="font-headline text-headline-sm text-primary font-bold uppercase tracking-wide px-4 py-1 border border-primary/30 rounded">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-6 animate-fade-in-up">
+          <span className="font-headline text-sm sm:text-headline-sm text-primary font-bold uppercase tracking-wide px-3 sm:px-4 py-1 border border-primary/30 rounded">
             Software Engineer
           </span>
-          <span className="text-on-surface-variant text-2xl font-light self-center">
-            |
-          </span>
-          <span className="font-headline text-headline-sm text-primary font-bold uppercase tracking-wide px-4 py-1 border border-primary/30 rounded">
+          <span className="text-on-surface-variant text-lg sm:text-2xl font-light hidden sm:inline">|</span>
+          <span className="font-headline text-sm sm:text-headline-sm text-primary font-bold uppercase tracking-wide px-3 sm:px-4 py-1 border border-primary/30 rounded">
             Full-Stack JavaScript
           </span>
-          <span className="text-on-surface-variant text-2xl font-light self-center">
-            |
-          </span>
-          <span className="font-headline text-headline-sm text-primary font-bold uppercase tracking-wide px-4 py-1 border border-primary/30 rounded">
+          <span className="text-on-surface-variant text-lg sm:text-2xl font-light hidden sm:inline">|</span>
+          <span className="font-headline text-sm sm:text-headline-sm text-primary font-bold uppercase tracking-wide px-3 sm:px-4 py-1 border border-primary/30 rounded">
             Backend Developer
           </span>
         </div>
 
         {/* Typing tagline */}
-        <p className="text-body-lg text-on-surface-variant mb-6 max-w-3xl mx-auto leading-relaxed font-code bg-surface-container/80 p-6 rounded border border-outline-variant shadow-lg backdrop-blur-sm min-h-[60px]">
+        <p className="text-sm sm:text-body-lg text-on-surface-variant mb-6 max-w-3xl mx-auto leading-relaxed font-code bg-surface-container/80 p-4 sm:p-6 rounded border border-outline-variant shadow-lg backdrop-blur-sm min-h-[60px]">
           <span className="text-primary">{displayText}</span>
           <span className="typing-cursor" />
         </p>
@@ -79,7 +75,7 @@ export default function Hero() {
               : "opacity-0 translate-y-4"
           }`}
         >
-          <div className="bg-surface-container/60 border border-outline-variant rounded p-6 backdrop-blur-sm space-y-4">
+          <div className="bg-surface-container/60 border border-outline-variant rounded p-4 sm:p-6 backdrop-blur-sm space-y-4">
             <p className="text-on-surface-variant text-sm leading-relaxed font-code">
               I&apos;ve engineered production infrastructure for high-traffic
               platforms — from multi-channel e-commerce systems and real-time

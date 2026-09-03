@@ -22,9 +22,30 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marwan Mamdouh | Backend Software Engineer",
+  title: "Marwan Mamdouh | Software Engineer",
   description:
     "Technical Precision Portfolio - Architecting robust, scalable enterprise solutions through technical precision and systems-level thinking.",
+  openGraph: {
+    title: "Marwan Mamdouh | Software Engineer",
+    description:
+      "Technical Precision Portfolio - Architecting robust, scalable enterprise solutions through technical precision and systems-level thinking.",
+    images: [
+      {
+        url: "/mr-.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "Marwan Mamdouh - Software Engineer",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marwan Mamdouh | Software Engineer",
+    description:
+      "Technical Precision Portfolio - Architecting robust, scalable enterprise solutions through technical precision and systems-level thinking.",
+    images: ["/mr-.jpg"],
+  },
 };
 
 export default function RootLayout({

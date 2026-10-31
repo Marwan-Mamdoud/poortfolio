@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const [displayText, setDisplayText] = useState("");
   const [showDetails, setShowDetails] = useState(false);
-  const fullText =
-    "> I build backend systems that don't break under pressure.";
+  const fullText = "> I build backend systems that don't break under pressure.";
 
   useEffect(() => {
     let i = 0;
@@ -51,11 +50,15 @@ export default function Hero() {
           <span className="font-headline text-sm sm:text-headline-sm text-primary font-bold uppercase tracking-wide px-3 sm:px-4 py-1 border border-primary/30 rounded">
             Software Engineer
           </span>
-          <span className="text-on-surface-variant text-lg sm:text-2xl font-light hidden sm:inline">|</span>
+          <span className="text-on-surface-variant text-lg sm:text-2xl font-light hidden sm:inline">
+            |
+          </span>
           <span className="font-headline text-sm sm:text-headline-sm text-primary font-bold uppercase tracking-wide px-3 sm:px-4 py-1 border border-primary/30 rounded">
             Full-Stack JavaScript
           </span>
-          <span className="text-on-surface-variant text-lg sm:text-2xl font-light hidden sm:inline">|</span>
+          <span className="text-on-surface-variant text-lg sm:text-2xl font-light hidden sm:inline">
+            |
+          </span>
           <span className="font-headline text-sm sm:text-headline-sm text-primary font-bold uppercase tracking-wide px-3 sm:px-4 py-1 border border-primary/30 rounded">
             Backend Developer
           </span>
@@ -85,9 +88,11 @@ export default function Hero() {
             <p className="text-on-surface-variant text-sm leading-relaxed font-code">
               My stack runs deep on{" "}
               <span className="text-primary font-bold">Node.js</span>,{" "}
-              <span className="text-primary font-bold">.NET</span>, and{" "}
-              <span className="text-primary font-bold">Express.js</span>, but
-              my real strength is{" "}
+              <span className="text-primary font-bold">C#</span>,
+              <span className="text-primary font-bold"> Express.js</span>,
+              <span className="text-primary font-bold"> Nest.js</span>, and{" "}
+              <span className="text-primary font-bold">.Net</span>, but my real
+              strength is{" "}
               <span className="text-primary font-bold">architecture</span>:
               designing event-driven microservices, optimizing SQL queries for
               large-scale datasets, and building OCR pipelines and WebSocket
@@ -109,7 +114,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
-            href="/Marwan-Mamdouh-CV.pdf"
+            href="/Marwan_Mamdouh_CV.pdf"
             download
             className="group px-8 py-4 bg-primary-container text-primary-fixed font-bold uppercase tracking-wider border-2 border-primary-container hover:bg-surface-container-high hover:border-primary transition-all rounded flex items-center gap-3 font-code glow-border"
           >

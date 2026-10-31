@@ -65,19 +65,33 @@ export const workExperience = [
   {
     id: 1,
     title: "Software Engineer",
-    company: "Trego Tech",
-    logo: "/trego_tech_logo.jpeg",
-    duration: "Jan 2026 - Present",
+    company: "Turuq Innovations",
+    logo: "/turuq.webp",
+    duration: "Sep 2026 - Present",
     location: "Cairo, Egypt",
-    type: "Full Time, Hybrid",
+    type: "Full Time",
     directives: [
-      "Developed and maintained scalable microservices-based backend systems supporting real-world production workloads.",
-      "Designed and implemented independent, loosely coupled services to handle core domains such as users, orders, payments, and notifications.",
-      "Built RESTful APIs and inter-service communication using Node.js, Express.js, and NestJS, following clean architecture and domain-driven principles.",
+      "Develop and maintain backend services supporting order management, warehouse operations, courier management, and shipping workflows.",
+      "Build RESTful APIs and implement business logic across multiple logistics platforms and systems.",
+      "Contribute to backend architecture, service-layer design, and database operations to improve system reliability and maintainability.",
     ],
   },
   {
     id: 2,
+    title: "Software Engineer",
+    company: "Trego Tech",
+    logo: "/trego_tech_logo.jpeg",
+    duration: "Jan 2026 - Sep 2026",
+    location: "Cairo, Egypt",
+    type: "Full Time, Hybrid",
+    directives: [
+      "Developed and maintained scalable microservices-based backend systems supporting real-world production workloads.",
+      "Designed and implemented independent, loosely coupled services to handle core domains such as products, inventory, pricing, notifications, and organization management.",
+      "Built RESTful APIs and backend services using Node.js, Express.js, and NestJS, following clean architecture and domain-driven principles.",
+    ],
+  },
+  {
+    id: 3,
     title: "Software Developer",
     company: "Anyware Software",
     logo: "/anyware_logo.jpeg",
@@ -92,7 +106,7 @@ export const workExperience = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Full Stack Javascript Developer",
     company: "Nobodiez Digital Agency",
     logo: "/Nobodiez.svg",
@@ -107,10 +121,28 @@ export const workExperience = [
     ],
   },
 ];
-
 export const projects = [
   {
     id: 1,
+    company: "Turuq Innovations",
+    title: "Turuq",
+    subtitle: "Logistics and Shipping Management Platforms",
+    terminal: "turuq@logistics:~",
+    description:
+      "A suite of logistics and shipping platforms supporting end-to-end operational workflows, including order management, warehouse services, courier management, shipment handling, and delivery operations. Provides backend services and APIs to coordinate logistics processes across multiple systems.",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "REST APIs",
+      "Next.js",
+    ],
+    link: "https://www.turuq.co/",
+  },
+
+  {
+    id: 2,
     company: "Trego Tech",
     title: "Rabta",
     subtitle: "Multi-Channel E-Commerce Management Platform",
@@ -121,7 +153,7 @@ export const projects = [
     link: "https://dashboard.e-rabta.com/",
   },
   {
-    id: 2,
+    id: 3,
     company: "Nobodiez Digital Agency",
     title: "Ajman Government",
     subtitle: "News & Journalist Management Platform",
@@ -132,7 +164,7 @@ export const projects = [
     private: true,
   },
   {
-    id: 3,
+    id: 4,
     company: "Anyware Software",
     title: "Gong Cha",
     subtitle: "Beverage & Cafe Management Platform",
@@ -143,7 +175,7 @@ export const projects = [
     private: true,
   },
   {
-    id: 4,
+    id: 5,
     company: "Anyware Software",
     title: "Pablo & Abdo",
     subtitle: "Cafe & Restaurant Management System",
@@ -154,7 +186,7 @@ export const projects = [
     private: true,
   },
   {
-    id: 5,
+    id: 6,
     company: "Anyware Software",
     title: "Garnell",
     subtitle: "Cafe & Restaurant Digital Platform",
@@ -166,7 +198,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 7,
     company: "Personal",
     title: "Duolingo Clone",
     subtitle: "Full-Stack Language Platform",
@@ -179,7 +211,7 @@ export const projects = [
     private: false,
   },
   {
-    id: 7,
+    id: 8,
     company: "Personal",
     title: "Animated Apple iPhone 3D",
     subtitle: "Interactive 3D Experience",
@@ -192,7 +224,7 @@ export const projects = [
     private: false,
   },
   {
-    id: 8,
+    id: 9,
     company: "Personal",
     title: "E-Commerce Platform",
     subtitle: "Enterprise Retail System",
@@ -205,7 +237,7 @@ export const projects = [
     private: false,
   },
   {
-    id: 9,
+    id: 10,
     company: "Personal",
     title: "Real-Time Chat App",
     subtitle: "WebSocket Communication",
